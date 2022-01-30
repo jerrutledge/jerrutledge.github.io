@@ -23,9 +23,11 @@ sphere.material.transparent = true;
 scene.add(sphere);
 
 // CAMERA & LIGHTS
+camera.position.z = 3;
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.minDistance = 1;
-controls.maxDistance = 10;
+controls.minDistance = 1.4;
+controls.maxDistance = 5;
+controls.position0.z = 3;
 controls.enablePan = false;
 
 // ANIMATION / MOVEMENT
