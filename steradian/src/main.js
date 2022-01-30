@@ -24,8 +24,9 @@ sphere.material.transparent = true;
 scene.add(sphere);
 
 // CONE
-var h = 0.8;
-var r = (1-h ** 2) ** (1/2);
+// this h represents the height of the cone, not the height of the cap
+var h = 1-(1/(2*Math.PI)); // should be about 0.840845
+var r = (1-h ** 2) ** (1/2); // height of the cap = 0.1591549
 var geometry = new THREE.ConeGeometry(r, h, 64, 1, true);
 var material = new THREE.MeshPhongMaterial({
     color: 0xFA83E2
