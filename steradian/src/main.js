@@ -9,7 +9,8 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
 var renderer = new THREE.WebGLRenderer();
-var canvasDimension = Math.min(500, window.innerWidth, window.innerHeight);
+renderer.localClippingEnabled = true;
+var canvasDimension = Math.min(900, window.innerWidth-90, window.innerHeight-90);
 renderer.setSize(canvasDimension, canvasDimension);
 document.body.appendChild(renderer.domElement);
 
@@ -22,13 +23,44 @@ sphere.material.opacity = 0.25;
 sphere.material.transparent = true;
 scene.add(sphere);
 
+// CONE
+var h = 0.8;
+var r = (1-h ** 2) ** (1/2);
+var geometry = new THREE.ConeGeometry(r, h, 64, 1, true);
+var material = new THREE.MeshPhongMaterial({
+    color: 0xFA83E2
+});
+var cone = new THREE.Mesh(geometry, material);
+cone.lookAt(0, 5, 0);
+cone.position.z = (h/2);
+scene.add(cone);
+
+// CONE CAP
+const clipPlanes = [
+    new THREE.Plane(new THREE.Vector3(1, 0, 0), 3),
+    new THREE.Plane(new THREE.Vector3(0, -1, 0), 3),
+    new THREE.Plane(new THREE.Vector3(0, 0, 1), -h)
+];
+var geometry = new THREE.SphereGeometry(1.001, 64, 32); // 1.001 to prevent clipping between cone and cap
+var material = new THREE.MeshPhongMaterial({
+    clippingPlanes: clipPlanes,
+    clipIntersection: false,
+    color: 0xFA83E2
+});
+var cap = new THREE.Mesh(geometry, material);
+scene.add(cap);
+
 // CAMERA & LIGHTS
-camera.position.z = 3;
+camera.position.x = 3;
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 1.4;
 controls.maxDistance = 5;
-controls.position0.z = 3;
+controls.position0.x = 3;
 controls.enablePan = false;
+// light
+const light = new THREE.HemisphereLight(0xffffff, 0x111111, 1.7);
+// light.position.set(1.5, 1.5, -1.25);
+scene.add(light);
 
 // ANIMATION / MOVEMENT
 var animate = function () {
