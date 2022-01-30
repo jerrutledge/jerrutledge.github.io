@@ -6,4 +6,4 @@ To ensure you are thinking of the intended Jeremy, a picture of Jeremy is shown 
 
 ![Jeremy-Rutledge](/images/jeremyinthepark.jpg){:class="img-responsive"}
 
-There may be some projects linked somewhere on this site... only time will tell. 
+Check out Jeremy's latest project: [Steradian Visualizer](/steradian)
