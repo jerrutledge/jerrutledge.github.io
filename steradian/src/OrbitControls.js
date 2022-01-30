@@ -6,7 +6,7 @@ import {
 	TOUCH,
 	Vector2,
 	Vector3
-} from 'three';
+} from './three.module.js';
 
 // Taken from three.js / examples
 

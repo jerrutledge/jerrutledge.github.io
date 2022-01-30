@@ -1,3 +1,9 @@
+import * as THREE from './three.module.js';
+
+import {
+    OrbitControls
+} from "./OrbitControls.js";
+
 // CREATE SCENE
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
@@ -17,14 +23,14 @@ sphere.material.transparent = true;
 scene.add(sphere);
 
 // CAMERA & LIGHTS
-camera.position.z = 3;
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.minDistance = 1;
+controls.maxDistance = 10;
+controls.enablePan = false;
 
 // ANIMATION / MOVEMENT
 var animate = function () {
     requestAnimationFrame(animate);
-
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
 
     renderer.render(scene, camera);
 };
