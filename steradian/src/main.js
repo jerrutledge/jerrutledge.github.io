@@ -60,11 +60,11 @@ var cap = new THREE.Mesh(geometry, material);
 scene.add(cap);
 
 // CAMERA & LIGHTS
-camera.position.x = 3;
+camera.position.x = 2;
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 1.4;
 controls.maxDistance = 5;
-controls.position0.x = 3;
+controls.position0.x = 2;
 controls.enablePan = false;
 controls.autoRotate = true;
 // light
