@@ -2,13 +2,30 @@
 <html lang="en">
 
 <head>
-	<title>Steradian Demo</title>
+	<title>Steradian Visualizer</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
 	<script type="module" src="./src/main.js"></script>
+
+	<h1>Steradian Visualizer</h1>
+	<div id="demo"></div>
+	<p class="tip">drag to rotate / pinch or scroll to zoom</p>
+	<p class="values">
+		Steradians = <span id="steradians"></span><br>
+		Polar Angle = <span id="polarAngle"></span><br>
+		Cone (pink) Height = <span id="coneHeight"></span><br>
+		Cone Cap (blue) Area  = <span id="capArea"></span>
+	</p>
+	<p>What is a steradian? Just like radians measure the angle of a circle, steradians measure the
+		<b>solid angle</b> of a sphere. When you get an angle of a circle, that represents a slice
+		of the circle. When you get a solid angle of a sphere, that represents the sort of cone-like
+		shape you see cut out of the sphere above.</p>
+	<p>Confusing, right? That's why I made this tool to visualize what a solid angle and its corresponding steradian
+		value actually look like in 3D. Go on, try rotating the sphere and adjusting the height.</p>
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 body {
-    margin: 1em 0 1em 0;
+    margin: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 canvas {
     margin: auto;
