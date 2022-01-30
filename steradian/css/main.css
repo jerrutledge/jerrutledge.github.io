@@ -1,7 +1,14 @@
 body {
-    margin: 1em;
+    margin: 1em auto 1em auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 900px;
 }
 canvas {
     margin: auto;
+}
+p {
+    margin: 1em;
+}
+h1 {
+    margin-inline-start: 0.5em;
 }
