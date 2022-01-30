@@ -58,6 +58,7 @@ controls.minDistance = 1.4;
 controls.maxDistance = 5;
 controls.position0.x = 3;
 controls.enablePan = false;
+controls.autoRotate = true;
 // light
 const light = new THREE.HemisphereLight(0xffffff, 0x111111, 1.7);
 // light.position.set(1.5, 1.5, -1.25);
@@ -66,6 +67,7 @@ scene.add(light);
 // ANIMATION / MOVEMENT
 var animate = function () {
     requestAnimationFrame(animate);
+    controls.update();
 
     renderer.render(scene, camera);
 };
