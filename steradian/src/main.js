@@ -29,7 +29,7 @@ var h = 1-(1/(2*Math.PI)); // should be about 0.840845
 var r = (1-h ** 2) ** (1/2); // height of the cap = 0.1591549
 var geometry = new THREE.ConeGeometry(r, h, 64, 1, true);
 var material = new THREE.MeshPhongMaterial({
-    color: 0xFA83E2
+    color: 0xD254F0
 });
 var cone = new THREE.Mesh(geometry, material);
 cone.lookAt(0, 5, 0);
@@ -46,7 +46,7 @@ var geometry = new THREE.SphereGeometry(1.001, 64, 32); // 1.001 to prevent clip
 var material = new THREE.MeshPhongMaterial({
     clippingPlanes: clipPlanes,
     clipIntersection: false,
-    color: 0xFA83E2
+    color: 0x3C9BFA
 });
 var cap = new THREE.Mesh(geometry, material);
 scene.add(cap);
